@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/first">
+
+    <fragment
+        android:id="@+id/first"
+        android:name="com.example.quizgamebyasadbek.fragments.First"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_first_to_nameAndFamily"
+            app:destination="@id/nameAndFamily" />
+    </fragment>
+    <fragment
+        android:id="@+id/nameAndFamily"
+        android:name="com.example.quizgamebyasadbek.fragments.NameAndFamily"
+        android:label="fragment_name_and_family"
+        tools:layout="@layout/fragment_name_and_family" >
+        <action
+            android:id="@+id/action_nameAndFamily_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.quizgamebyasadbek.fragments.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_flagsFragment"
+            app:destination="@id/flagsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_carsFragment"
+            app:destination="@id/carsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_footballClubsFragment"
+            app:destination="@id/footballClubsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_startsFragment"
+            app:destination="@id/startsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/flagsFragment"
+        android:name="com.example.quizgamebyasadbek.fragments.FlagsFragment"
+        android:label="fragment_flags"
+        tools:layout="@layout/fragment_flags" />
+    <fragment
+        android:id="@+id/carsFragment"
+        android:name="com.example.quizgamebyasadbek.fragments.CarsFragment"
+        android:label="fragment_cars"
+        tools:layout="@layout/fragment_cars" />
+    <fragment
+        android:id="@+id/footballClubsFragment"
+        android:name="com.example.quizgamebyasadbek.fragments.FootballClubsFragment"
+        android:label="fragment_football_clubs"
+        tools:layout="@layout/fragment_football_clubs" />
+    <fragment
+        android:id="@+id/startsFragment"
+        android:name="com.example.quizgamebyasadbek.fragments.StartsFragment"
+        android:label="fragment_starts"
+        tools:layout="@layout/fragment_starts" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.quizgamebyasadbek.fragments.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+</navigation>
