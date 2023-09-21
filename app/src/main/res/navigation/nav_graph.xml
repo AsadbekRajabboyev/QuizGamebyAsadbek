@@ -48,7 +48,11 @@
         android:id="@+id/flagsFragment"
         android:name="com.example.quizgamebyasadbek.fragments.FlagsFragment"
         android:label="fragment_flags"
-        tools:layout="@layout/fragment_flags" />
+        tools:layout="@layout/fragment_flags" >
+        <action
+            android:id="@+id/action_flagsFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/carsFragment"
         android:name="com.example.quizgamebyasadbek.fragments.CarsFragment"
