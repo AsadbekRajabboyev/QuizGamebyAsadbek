@@ -4,15 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/img_20"
     tools:context=".fragments.MenuFragment">
+
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/flags"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Flags"
+        android:background="@drawable/btn_selector_shape"
         app:layout_constraintBottom_toTopOf="@id/clubs"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="10dp"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,13 +25,14 @@
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:id="@+id/clubs"
         android:text="Football Clubs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/cars"
         app:layout_constraintVertical_chainStyle="packed"
-
+        android:background="@drawable/btn_selector_shape"
         app:layout_constraintTop_toBottomOf="@id/flags"
         />
     <androidx.appcompat.widget.AppCompatButton
@@ -34,21 +40,37 @@
         android:layout_height="wrap_content"
         android:id="@+id/cars"
         android:text="cars"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_selector_shape"
         app:layout_constraintTop_toBottomOf="@id/clubs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@id/info"/>
 
-        app:layout_constraintBottom_toTopOf="@id/exit"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/info"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/exit"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@id/cars"
+        android:text="ABOut"
+        android:background="@drawable/btn_selector_shape"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/exit"
         android:layout_width="200dp"
+        android:layout_marginBottom="10dp"
         android:layout_height="wrap_content"
         android:text="EXIT"
+        android:background="@drawable/btn_selector_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cars"
+        app:layout_constraintTop_toBottomOf="@id/info"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

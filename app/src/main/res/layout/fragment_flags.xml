@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.FlagsFragment"
+    android:background="@drawable/img_20"
     android:padding="10dp">
 
     <TextView
@@ -15,7 +16,7 @@
         android:text="HINT"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="@color/black"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/cardV"
         app:layout_constraintHorizontal_bias="0.473"
@@ -35,7 +36,7 @@
         android:fontFamily="sans-serif-condensed-medium"
         android:text="1-level"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp" />
 
     <androidx.cardview.widget.CardView
@@ -73,7 +74,9 @@
         <ImageView
             android:id="@+id/img"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            />
+
     </androidx.cardview.widget.CardView>
 
     <LinearLayout
@@ -118,4 +121,5 @@
         app:layout_constraintLeft_toLeftOf="parent">
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

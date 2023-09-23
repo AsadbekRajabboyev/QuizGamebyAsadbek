@@ -144,14 +144,13 @@ public class FlagsFragment extends Fragment implements View.OnClickListener {
         wordModelList.add(new WordModel(R.drawable.img_18, "Somali", "Africa", 6));
         wordModelList.add(new WordModel(R.drawable.img_19, "Japan", "Asia", 5));
 
-
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
+       @Override
+        public void onDestroyView() {
+            super.onDestroyView();
+            binding = null;
+        }
 
     @Override
     public void onClick(View v) {
@@ -193,11 +192,7 @@ public class FlagsFragment extends Fragment implements View.OnClickListener {
                 setData();
                 binding.textHint.setText("");
                 Toast.makeText(requireContext(), "Barakalla", Toast.LENGTH_SHORT).show();
-
-
             }
         }
-
-
     }
 }

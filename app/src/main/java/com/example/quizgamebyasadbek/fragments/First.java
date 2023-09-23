@@ -72,7 +72,7 @@ public class First extends Fragment {
 
                         // Boshqa fragmentga o'tish
                         Navigation.findNavController(binding.getRoot()).navigate(
-                                R.id.nameAndFamily,
+                                R.id.menuFragment,
                                 null,
                                 new NavOptions.Builder()
                                         .setEnterAnim(enterAnim)
