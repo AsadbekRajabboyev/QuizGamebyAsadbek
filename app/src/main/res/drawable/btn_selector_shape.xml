@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item android:state_pressed="true">
-        <shape android:shape="rectangle">
-
-            <solid android:color="@color/colorAccent" />
-            <corners android:radius="10dp" />
-
-        </shape>
-
-    </item>
-    <item>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:left="2dp"
+        android:top="2dp"
+        android:right="2dp"
+        android:bottom="2dp">
         <shape android:shape="rectangle">
             <solid android:color="@color/colorAccent" />
-            <corners android:radius="10dp" />
+            <corners android:radius="8dp" />
+            <stroke
+                android:width="2dp"
+                android:color="#000000" /> <!-- Dumaloq chiziq rangi va kengligi -->
         </shape>
     </item>
-
-</selector>
+</layer-list>

@@ -78,9 +78,8 @@ private FragmentCarsBinding binding;
         }
 
         Button buttonHint = new Button(requireContext());
-        buttonHint.setText("HINT");
         Drawable drawable = getResources().getDrawable(resourceId);
-        buttonHint.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
+        buttonHint.setBackgroundDrawable(drawable);
         buttonHint.setLayoutParams(layoutParams1);
 
         binding.buttonLayout.addView(buttonHint);
@@ -90,7 +89,7 @@ private FragmentCarsBinding binding;
                 int i = coins1 - 10;
                 coins1 = i;
                 buttonHint.setVisibility(View.INVISIBLE);
-                binding.coins.setText(i + "coins");
+                binding.coins.setText(i + " ");
             } else {
                 Toast.makeText(requireContext(), "Sizda yetarli mablag mavjud emas", Toast.LENGTH_SHORT).show();
             }
@@ -114,24 +113,24 @@ private FragmentCarsBinding binding;
 
     private void loadData() {
         wordModelList = new ArrayList<>();
-        wordModelList.add(new WordModel(R.drawable.img_5, "Argentina", "South America", 8));//0
-        wordModelList.add(new WordModel(R.drawable.img_7, "Mexico", "North America", 5));//1
-        wordModelList.add(new WordModel(R.drawable.img_6, "China", "Asia", 5));
-        wordModelList.add(new WordModel(R.drawable.img_4, "EGYPT", "Africa", 5));
-        wordModelList.add(new WordModel(R.drawable.img_3, "USA", "North America", 3));
-        wordModelList.add(new WordModel(R.drawable.img_8, "Uzbekistan", "Asia", 10));
-        wordModelList.add(new WordModel(R.drawable.img_9, "Tajikistan", "Asia", 10));
-        wordModelList.add(new WordModel(R.drawable.img_10, "India", "Asia", 5));
-        wordModelList.add(new WordModel(R.drawable.img_11, "Germany", "Europa", 7));
-        wordModelList.add(new WordModel(R.drawable.img_12, "Russia", "Europa", 6));
-        wordModelList.add(new WordModel(R.drawable.img_13, "Canada", "North America", 6));
-        wordModelList.add(new WordModel(R.drawable.img_14, "UAE", "Asia", 3));
-        wordModelList.add(new WordModel(R.drawable.img_15, "Mongolia", "Asia", 8));
-        wordModelList.add(new WordModel(R.drawable.img_16, "Kongo", "Africa", 6));
-        wordModelList.add(new WordModel(R.drawable.img_17, "Morocco", "Africa", 7));
-        wordModelList.add(new WordModel(R.drawable.img_18, "Somali", "Africa", 6));
-        wordModelList.add(new WordModel(R.drawable.img_19, "Japan", "Asia", 5));
-        
+        wordModelList.add(new WordModel(R.drawable.img_38, "Chevrolet", "C_______T", 8));//0
+        wordModelList.add(new WordModel(R.drawable.img_39, "Ford", "F___D", 5));//1
+        wordModelList.add(new WordModel(R.drawable.img_40, "Toyota", "T____A", 5));
+        wordModelList.add(new WordModel(R.drawable.img_42, "Honda", "H____A", 5));
+        wordModelList.add(new WordModel(R.drawable.img_55, "BMW", "B__W", 3));
+        wordModelList.add(new WordModel(R.drawable.img_43, "MercedesBenz", "M________Z", 10));
+        wordModelList.add(new WordModel(R.drawable.img_44, "Volkswagen", "V________N", 10));
+        wordModelList.add(new WordModel(R.drawable.img_45, "Audi", "A___I", 5));
+        wordModelList.add(new WordModel(R.drawable.img_46, "Nissan", "N____N", 7));
+        wordModelList.add(new WordModel(R.drawable.img_47, "Tesla", "T___A", 6));
+        wordModelList.add(new WordModel(R.drawable.img_48, "Subaru", "S____U", 6));
+        wordModelList.add(new WordModel(R.drawable.img_49, "Hyundai", "H_____I", 3));
+        wordModelList.add(new WordModel(R.drawable.img_50, "Kia", "K__A", 8));
+        wordModelList.add(new WordModel(R.drawable.img_51, "Jaguar", "J_____R", 6));
+        wordModelList.add(new WordModel(R.drawable.img_52, "Porsche", "P_____E", 7));
+        wordModelList.add(new WordModel(R.drawable.img_53, "Ferrari", "F______I", 6));
+        wordModelList.add(new WordModel(R.drawable.img_54, "Lamborghini", "L_________I", 5));
+
     }
     @Override
     public void onDestroyView() {
@@ -173,8 +172,8 @@ private FragmentCarsBinding binding;
                 binding.buttonLayout.removeAllViews();
                 currentIndex++;
                 level++;
-                coins1 += 10;
-                binding.coins.setText(coins1 + "coins");
+                coins1 += 5;
+                binding.coins.setText(coins1 + " ");
                 binding.textViewLevel.setText(level + "-level");
                 setData();
                 binding.textHint.setText("");

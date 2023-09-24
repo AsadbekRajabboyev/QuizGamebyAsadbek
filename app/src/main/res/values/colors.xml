@@ -5,4 +5,6 @@
     <color name="colorPrimaryDark">#D81B60</color> <!-- Tizim rangi -->
     <color name="colorAccent">#FFC107</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="turquoise">#00CED1</color>
+    <color name="custom">#CA8A0B</color>
 </resources>

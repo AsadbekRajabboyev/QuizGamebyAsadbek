@@ -1,5 +1,6 @@
 package com.example.quizgamebyasadbek.fragments;
 
+import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -37,6 +38,7 @@ public class FootballClubsFragment extends Fragment implements View.OnClickListe
         return binding.getRoot();
     }
 
+    @SuppressLint("SetTextI18n")
     private void setData() {
         WordModel wordModel = wordModelList.get(currentIndex);
         binding.img.setImageResource(wordModel.getImg());
@@ -77,9 +79,8 @@ public class FootballClubsFragment extends Fragment implements View.OnClickListe
         }
 
         Button buttonHint = new Button(requireContext());
-        buttonHint.setText("HINT");
         Drawable drawable = getResources().getDrawable(resourceId);
-        buttonHint.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
+        buttonHint.setBackgroundDrawable(drawable);
         buttonHint.setLayoutParams(layoutParams1);
 
         binding.buttonLayout.addView(buttonHint);
@@ -89,7 +90,7 @@ public class FootballClubsFragment extends Fragment implements View.OnClickListe
                 int i = coins1 - 10;
                 coins1 = i;
                 buttonHint.setVisibility(View.INVISIBLE);
-                binding.coins.setText(i + "coins");
+                binding.coins.setText(i + " ");
             } else {
                 Toast.makeText(requireContext(), "Sizda yetarli mablag mavjud emas", Toast.LENGTH_SHORT).show();
             }
@@ -129,7 +130,23 @@ public class FootballClubsFragment extends Fragment implements View.OnClickListe
         wordModelList.add(new WordModel(R.drawable.img_34, "Napoli", "French", 6));
         wordModelList.add(new WordModel(R.drawable.img_35, "Espanol", "Spanish", 7));
         wordModelList.add(new WordModel(R.drawable.img_36, "Mallorca", "Spanish", 6));
-        wordModelList.add(new WordModel(R.drawable.img_36, "", "", 5));
+        wordModelList.add(new WordModel(R.drawable.img_21, "RealMadrid", "Spainsh ", 8));//0
+        wordModelList.add(new WordModel(R.drawable.img_22, "Barcelona", "Spainsh", 5));//1
+        wordModelList.add(new WordModel(R.drawable.img_23, "AlHilal", "Arabic", 5));
+        wordModelList.add(new WordModel(R.drawable.img_24, "PSG", "French", 5));
+        wordModelList.add(new WordModel(R.drawable.img_25, "AlNasser", "Arabic", 3));
+        wordModelList.add(new WordModel(R.drawable.img_26, "Pahtakor", "Uzbek", 10));
+        wordModelList.add(new WordModel(R.drawable.img_27, "Liverpool", "UK", 10));
+        wordModelList.add(new WordModel(R.drawable.img_28, "Chelsea", "UK", 5));
+        wordModelList.add(new WordModel(R.drawable.img_29, "Girona", "Spanish", 7));
+        wordModelList.add(new WordModel(R.drawable.img_30, "Juventus", "Italian", 6));
+        wordModelList.add(new WordModel(R.drawable.img_31, "Lokamativ", "Uzbek", 6));
+        wordModelList.add(new WordModel(R.drawable.img_32, "Rostov", "Russian", 3));
+        wordModelList.add(new WordModel(R.drawable.img_33, "Xorazm", "UZbek", 8));
+        wordModelList.add(new WordModel(R.drawable.img_34, "Napoli", "French", 6));
+        wordModelList.add(new WordModel(R.drawable.img_35, "Espanol", "Spanish", 7));
+        wordModelList.add(new WordModel(R.drawable.img_36, "Mallorca", "Spanish", 6));
+
 
     }
 
@@ -138,6 +155,7 @@ public class FootballClubsFragment extends Fragment implements View.OnClickListe
         super.onDestroyView();
         binding = null;
     }
+    @SuppressLint("SetTextI18n")
     @Override
     public void onClick(View v) {
         Button button = (Button) v;
@@ -172,8 +190,8 @@ public class FootballClubsFragment extends Fragment implements View.OnClickListe
                 binding.buttonLayout.removeAllViews();
                 currentIndex++;
                 level++;
-                coins1 += 10;
-                binding.coins.setText(coins1 + "coins");
+                coins1 += 5;
+                binding.coins.setText(coins1 + " ");
                 binding.textViewLevel.setText(level + "-level");
                 setData();
                 binding.textHint.setText("");

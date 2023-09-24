@@ -59,7 +59,7 @@ private FragmentMenuBinding binding;
             alertDialogBuilder.setMessage("Bu ilova Asadbek Rajabboyev tomonidan yaratilgan. Taklif va murojatlar bolsa +998991594946 raqamiga yoki asadrajab28@gmali.com ga murojat qiling");
 
             // "Ok" tugmasi va unga click qilganda amalni bajaruvchi qismi
-            alertDialogBuilder.setPositiveButton("Ok", (dialog, which) -> {
+            alertDialogBuilder.setPositiveButton("OK", (dialog, which) -> {
                 // Bu joyda "Ok" tugmasi bosilganda bajariladigan amalni yozing
                 // Masalan, alertDialogni yopishingiz mumkin
                 dialog.dismiss();

@@ -24,6 +24,9 @@ public class First extends Fragment {
             public void onClick(View v) {
                 // Dumaloq animatsiya boshlash
                 binding.progressBar.setVisibility(View.VISIBLE);
+                binding.welcomeTxt.setVisibility(View.GONE);
+                binding.tag.setVisibility(View.GONE);
+                binding.button.setVisibility(View.GONE);
                 animateProgressBar();
             }
         });
@@ -34,7 +37,7 @@ public class First extends Fragment {
     // ProgressBar animatsiyasi
     private void animateProgressBar() {
         final int totalProgress = 100; // Umumiy progress miqdori
-        final int animationDuration = 5000; // Animatsiya davri (ms)
+        final int animationDuration = 3000; // Animatsiya davri (ms)
 
         final Handler handler = new Handler();
         final int increment = totalProgress / (animationDuration / 100); // Progressni har 100ms da yangilash

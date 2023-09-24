@@ -1,10 +1,16 @@
 package com.example.quizgamebyasadbek.fragments;
 
 
+import static android.graphics.Color.BLUE;
+import static android.graphics.Color.RED;
+
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 
 import android.os.Bundle;
 
+import androidx.annotation.ColorInt;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -40,7 +46,6 @@ public class FlagsFragment extends Fragment implements View.OnClickListener {
     private int resourceId = R.drawable.baseline_lightbulb_24;
     private int level = 1;
     private int coins1 = 50;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -81,7 +86,7 @@ public class FlagsFragment extends Fragment implements View.OnClickListener {
         }
         for (int i = harf2List.size() / 2; i < harf2List.size(); i++) {
 
-            Button button = new Button(requireContext());
+            AppCompatButton button = new AppCompatButton(requireContext());
             button.setText(harf2List.get(i).toString());
             button.setLayoutParams(layoutParams);
             button.setOnClickListener(this);
@@ -89,11 +94,11 @@ public class FlagsFragment extends Fragment implements View.OnClickListener {
 
         }
 
-        Button buttonHint = new Button(requireContext());
-        buttonHint.setText("HINT");
+        AppCompatButton buttonHint = new AppCompatButton(requireContext());
         Drawable drawable = getResources().getDrawable(resourceId);
-        buttonHint.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);
+        buttonHint.setBackgroundDrawable(drawable);
         buttonHint.setLayoutParams(layoutParams1);
+
 
         binding.buttonLayout.addView(buttonHint);
         buttonHint.setOnClickListener(v -> {
@@ -102,7 +107,7 @@ public class FlagsFragment extends Fragment implements View.OnClickListener {
                 int i = coins1 - 10;
                 coins1 = i;
                 buttonHint.setVisibility(View.INVISIBLE);
-                binding.coins.setText(i + "coins");
+                binding.coins.setText(i + " ");
             } else {
                 Toast.makeText(requireContext(), "Sizda yetarli mablag mavjud emas", Toast.LENGTH_SHORT).show();
             }
@@ -126,23 +131,23 @@ public class FlagsFragment extends Fragment implements View.OnClickListener {
 
     private void loadData() {
         wordModelList = new ArrayList<>();
-        wordModelList.add(new WordModel(R.drawable.img_5, "Argentina", "South America", 8));//0
-        wordModelList.add(new WordModel(R.drawable.img_7, "Mexico", "North America", 5));//1
-        wordModelList.add(new WordModel(R.drawable.img_6, "China", "Asia", 5));
-        wordModelList.add(new WordModel(R.drawable.img_4, "EGYPT", "Africa", 5));
-        wordModelList.add(new WordModel(R.drawable.img_3, "USA", "North America", 3));
-        wordModelList.add(new WordModel(R.drawable.img_8, "Uzbekistan", "Asia", 10));
-        wordModelList.add(new WordModel(R.drawable.img_9, "Tajikistan", "Asia", 10));
-        wordModelList.add(new WordModel(R.drawable.img_10, "India", "Asia", 5));
-        wordModelList.add(new WordModel(R.drawable.img_11, "Germany", "Europa", 7));
-        wordModelList.add(new WordModel(R.drawable.img_12, "Russia", "Europa", 6));
-        wordModelList.add(new WordModel(R.drawable.img_13, "Canada", "North America", 6));
-        wordModelList.add(new WordModel(R.drawable.img_14, "UAE", "Asia", 3));
-        wordModelList.add(new WordModel(R.drawable.img_15, "Mongolia", "Asia", 8));
-        wordModelList.add(new WordModel(R.drawable.img_16, "Kongo", "Africa", 6));
-        wordModelList.add(new WordModel(R.drawable.img_17, "Morocco", "Africa", 7));
+        wordModelList.add(new WordModel(R.drawable.img_5, "Argentina", "A _ _ _ _ _ _ _ A", 8));//0
+        wordModelList.add(new WordModel(R.drawable.img_7, "Mexico", "M _ _ _ _ o", 5));//1
+        wordModelList.add(new WordModel(R.drawable.img_6, "China", "C _ _ _ A", 5));
+        wordModelList.add(new WordModel(R.drawable.img_4, "EGYPT", "E _ _ _ T", 5));
+        wordModelList.add(new WordModel(R.drawable.img_3, "USA", "U _ _", 3));
+        wordModelList.add(new WordModel(R.drawable.img_8, "Uzbekistan", "U _ _ _ _ _ _ _ _ N", 10));
+        wordModelList.add(new WordModel(R.drawable.img_9, "Tajikistan", "T _ _ _ _ _ _ _ _ N", 10));
+        wordModelList.add(new WordModel(R.drawable.img_10, "India", "I _ _ _ _ _", 5));
+        wordModelList.add(new WordModel(R.drawable.img_11, "Germany", "G _ _ _ _ _ Y", 7));
+        wordModelList.add(new WordModel(R.drawable.img_12, "Russia", "R _ _ _ _ A", 6));
+        wordModelList.add(new WordModel(R.drawable.img_13, "Canada", "C _ _ _ _ A", 6));
+        wordModelList.add(new WordModel(R.drawable.img_14, "UAE", "U _ _", 3));
+        wordModelList.add(new WordModel(R.drawable.img_15, "Mongolia", "M _ _ _ _ _ _ _ A", 8));
+        wordModelList.add(new WordModel(R.drawable.img_16, "Congo", "C _ _ _ O", 6));
+        wordModelList.add(new WordModel(R.drawable.img_17, "Morocco", "M _ _ _ _ _ O", 7));
         wordModelList.add(new WordModel(R.drawable.img_18, "Somali", "Africa", 6));
-        wordModelList.add(new WordModel(R.drawable.img_19, "Japan", "Asia", 5));
+        wordModelList.add(new WordModel(R.drawable.img_19, "Japan", "J _ _ _ N", 5));
 
     }
 
@@ -158,8 +163,9 @@ public class FlagsFragment extends Fragment implements View.OnClickListener {
         String s = button.getText().toString();
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f);
 
-        Button cButton1 = new Button(requireContext());
+        AppCompatButton cButton1 = new AppCompatButton(requireContext());
         cButton1.setText(s);
+        cButton1.setTextColor(RED);
         cButton1.setLayoutParams(layoutParams);
         binding.layout.addView(cButton1);
         button.setVisibility(View.INVISIBLE);
@@ -186,8 +192,8 @@ public class FlagsFragment extends Fragment implements View.OnClickListener {
                 binding.buttonLayout.removeAllViews();
                 currentIndex++;
                 level++;
-                coins1 += 10;
-                binding.coins.setText(coins1 + "coins");
+                coins1 += 5;
+                binding.coins.setText(coins1 + " ");
                 binding.textViewLevel.setText(level + "-level");
                 setData();
                 binding.textHint.setText("");
